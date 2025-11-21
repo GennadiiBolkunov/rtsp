@@ -46,5 +46,5 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
-    implementation("com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:2.4.1")
+    implementation("com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:2.2.6")
 }

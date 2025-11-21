@@ -3,7 +3,7 @@ package com.example.rtspstreamer.stream
 import android.content.Context
 import android.content.Intent
 import android.util.Log
-import com.pedro.library.base.ConnectCheckerRtsp
+import com.pedro.rtsp.utils.ConnectCheckerRtsp
 import com.pedro.rtplibrary.rtsp.RtspDisplay
 
 class ScreenStreamer(
@@ -14,7 +14,7 @@ class ScreenStreamer(
 
     enum class State { IDLE, CONNECTING, STREAMING, ERROR }
 
-    private val rtspDisplay: RtspDisplay = RtspDisplay(context, this)
+    private val rtspDisplay: RtspDisplay = RtspDisplay(context, true, this)
 
     fun isStreaming(): Boolean = rtspDisplay.isStreaming
 
@@ -26,7 +26,7 @@ class ScreenStreamer(
             return
         }
         onStateChanged(State.CONNECTING, null)
-        rtspDisplay.startStream(projectionData, endpoint)
+        rtspDisplay.startStream(endpoint)
     }
 
     fun stop() {
@@ -36,11 +36,11 @@ class ScreenStreamer(
         }
     }
 
-    override fun onAuthError() {
+    override fun onAuthErrorRtsp() {
         onStateChanged(State.ERROR, "Ошибка авторизации")
     }
 
-    override fun onAuthSuccess() {
+    override fun onAuthSuccessRtsp() {
         Log.d(loggerTag, "Auth success")
     }
 
