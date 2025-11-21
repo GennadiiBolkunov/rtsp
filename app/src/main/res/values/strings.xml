@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">RTSP Screen</string>
+    <string name="start">Start streaming</string>
+    <string name="stop">Stop streaming</string>
+    <string name="change_endpoint">Set RTSP endpoint</string>
+    <string name="target_placeholder">Target: not configured</string>
+    <string name="dialog_title">RTSP адрес</string>
+    <string name="dialog_message">Введите host и порт приставки. Поток создаётся на /live.</string>
+    <string name="host_hint">192.168.0.10</string>
+    <string name="port_hint">8554</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отмена</string>
+    <string name="status_idle">Готов к старту</string>
+    <string name="status_connecting">Подключение…</string>
+    <string name="status_streaming">Транслируется</string>
+    <string name="status_error">Ошибка: %1$s</string>
+</resources>
